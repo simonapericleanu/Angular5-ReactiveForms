@@ -1,5 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
+import { SharedModule } from '../shared/shared.module';
+
 
 import { LayoutComponent } from './layout.component';
 import { NavbarComponent } from './navbar/navbar.component';
@@ -10,7 +12,8 @@ import { NavbarComponent } from './navbar/navbar.component';
     NavbarComponent
   ],
   imports: [
-    RouterModule
+    RouterModule,
+    SharedModule,
   ],
   providers: [],
 })

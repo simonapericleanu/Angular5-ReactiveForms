@@ -1,19 +1,15 @@
 import { Routes, RouterModule } from '@angular/router';
 
-import { AnimalsDomesticComponent } from './animals-domestic/animals-domestic.component';
-import { AnimalsWildComponent } from './animals-wild/animals-wild.component';
+import { AnimalsListComponent } from './animals-list/animals-list.component';
+import { AnimalsEditComponent } from './animals-edit/animals-edit.component';
 
 
 export const animalRoutes: Routes = [
-    {
-        path: '',
-        component: AnimalsDomesticComponent,
-        children: [
-            { path: '', redirectTo: 'domestic', pathMatch: 'full' },
-            { path: 'domestic', component: AnimalsDomesticComponent },
-            { path: 'wild', component: AnimalsWildComponent }
-        ]
-    }
+    { path: 'list', component: AnimalsListComponent },
+    { path: 'new', component: AnimalsEditComponent, data: { type: 'new' }  },
+    { path: 'edit', children: [
+        { path: ':id', component: AnimalsEditComponent, data: { type: 'edit' } }
+    ]}
 ];
 
 export const animalsRoutingModule = RouterModule.forChild(animalRoutes);

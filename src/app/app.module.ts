@@ -4,7 +4,8 @@ import { RouterModule, Routes } from '@angular/router';
 import { ROUTES } from './app.routes';
 import { HomeComponent } from '../home/home.component';
 import { LayoutModule } from '../layout/layout.module';
-
+import { SharedModule } from '../shared/shared.module';
+import { BsDropdownModule } from 'ngx-bootstrap';
 import { AppComponent } from './app.component';
 
 
@@ -18,7 +19,9 @@ import { AppComponent } from './app.component';
     RouterModule.forRoot(ROUTES, {
       // useHash: true
     }),
-    LayoutModule
+    LayoutModule,
+    SharedModule,
+    BsDropdownModule.forRoot()
   ],
   providers: [],
   bootstrap: [AppComponent]

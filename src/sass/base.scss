@@ -1,11 +1,57 @@
 //****************************//
+//          Body              //
+//***************************//
+body {
+    background-color: #c9de96; // Old browsers    
+    background: linear-gradient(to left, #c9de96 0%,#3cad5c 43%,#398235 100%);
+}
+
+//****************************//
 //           Header          //
 //***************************//
 
 .logo {
+    padding: 0 1em;
     a {
         color: darkseagreen;
         font-size: 2em;
         line-height: inherit;
     }
+}
+
+#navbarContent {
+    .dropdown-menu {
+        left: auto !important;
+        transform: translateY(-7px) !important;
+        width: auto;
+    }
+}
+
+.navbar {
+    .fa {
+        font-size: 0.7em;
+        transform: translateY(-5%);
+    }
+    .nav-link.active {
+        color: white;
+    }
+}
+
+
+
+//****************************//
+//           Utils           //
+//***************************//
+
+.relative {
+    position: relative;
+}
+
+.card {
+    margin: 0.5em;
+    padding: 1em;
+}
+
+td {
+    padding-right: 1em;
 }

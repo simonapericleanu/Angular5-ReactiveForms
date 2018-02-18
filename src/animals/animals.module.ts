@@ -1,14 +1,19 @@
 import { NgModule } from '@angular/core';
+import { SharedModule } from '../shared/shared.module';
+
 import { animalsRoutingModule } from './animals.routes';
-import { AnimalsDomesticComponent } from './animals-domestic/animals-domestic.component';
-import { AnimalsWildComponent } from './animals-wild/animals-wild.component';
+import { AnimalsListComponent } from './animals-list/animals-list.component';
+import { AnimalsCardComponent } from './animals-card/animals-card.component';
+import { AnimalsEditComponent } from './animals-edit/animals-edit.component';
 
 @NgModule({
   declarations: [
-    AnimalsDomesticComponent,
-    AnimalsWildComponent
+    AnimalsListComponent,
+    AnimalsCardComponent,
+    AnimalsEditComponent
   ],
   imports: [
+    SharedModule,
     animalsRoutingModule
   ],
   providers: [],
