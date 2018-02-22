@@ -1,0 +1,37 @@
+{
+  "care-takers": [
+    {
+      "id": 1,
+      "firstName": "John",
+      "lastName": "Doe"
+    },
+    {
+      "id": 2,
+      "firstName": "Jack",
+      "lastName": "Silver"
+    }
+  ],
+  "animals": [
+    {
+      "id": 3,
+      "name": "Tiger",
+      "typeID": 1,
+      "class": "Mammal",
+      "careTakerID": 1
+    },
+    {
+      "id": 4,
+      "name": "Snake",
+      "typeID": 1,
+      "class": "Reptile",
+      "careTakerID": 1
+    },
+    {
+      "id": 5,
+      "name": "aedew",
+      "typeID": 2,
+      "class": "dret",
+      "careTakerID": 1
+    }
+  ]
+}

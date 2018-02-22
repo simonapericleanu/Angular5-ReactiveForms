@@ -1,0 +1,9 @@
+@include media-breakpoint-down(xs) {
+    app-animals-list,
+    app-care-takers-list {
+        flex-direction: column;
+        .card {
+            width: auto;
+        }
+    }
+}
