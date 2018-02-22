@@ -1,1 +1,22 @@
-<app-animals-card></app-animals-card>
+<div class="card" *ngFor="let animal of animals; let i = index">
+    <div class="card-block">
+        <h4><a routerLink="/animals/edit/{{animal.id}}" class="card-title">{{animal.name}}</a></h4>
+        <table>
+            <tbody>
+                <tr>
+                    <td><strong>Type</strong></td>
+                    <td class="text-capitalize">{{getTypeName(animal)}}</td>
+                </tr>
+                <tr>
+                    <td><strong>Class</strong></td>
+                    <td>{{animal.class}}</td>
+                </tr>
+                <tr>
+                    <td><strong>Care Taker</strong></td>
+                    <td>{{getCareTakerName(animal.careTakerID)}}</td>
+                </tr>
+            </tbody>
+        </table>
+        <button type="button" class="btn btn-sm btn-danger btn-block mt-3" (click)="onDeleteClick(animals[i].id)">Delete</button>      
+    </div>
+</div>

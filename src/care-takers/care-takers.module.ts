@@ -1,16 +1,25 @@
 import { NgModule } from '@angular/core';
+
+import { SharedModule } from '../shared/shared.module';
 import { careTakersRoutingModule } from './care-takers.routes';
-import { CareTakersDomesticComponent } from './care-takers-domestic/care-takers-domestic.component';
-import { CareTakersWildComponent } from './care-takers-wild/care-takers-wild.component';
+import { CareTakersListComponent } from './care-takers-list/care-takers-list.component';
+import { CareTakersListService } from './care-takers-list/care-takers-list.service';
+
+import { CareTakersEditComponent } from './care-takers-edit/care-takers-edit.component';
+import { CareTakersEditService } from './care-takers-edit/care-takers-edit.service';
 
 @NgModule({
   declarations: [
-    CareTakersDomesticComponent,
-    CareTakersWildComponent
+    CareTakersListComponent,
+    CareTakersEditComponent
   ],
   imports: [
+    SharedModule,
     careTakersRoutingModule
   ],
-  providers: [],
+  providers: [
+    CareTakersEditService,
+    CareTakersListService
+  ],
 })
 export class CareTakersModule { }

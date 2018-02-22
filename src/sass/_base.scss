@@ -4,6 +4,7 @@
 body {
     background-color: #c9de96; // Old browsers    
     background: linear-gradient(to left, #c9de96 0%,#3cad5c 43%,#398235 100%);
+    color: cornsilk;
 }
 
 //****************************//
@@ -28,16 +29,31 @@ body {
 }
 
 .navbar {
+    .navbar-nav .active > .nav-link,
+    .navbar-nav .nav-link.active {
+        color: white !important;
+    }
     .fa {
         font-size: 0.7em;
         transform: translateY(-5%);
     }
-    .nav-link.active {
-        color: white;
-    }
+    
 }
 
 
+//****************************//
+//           Content         //
+//***************************//
+
+app-animals-list,
+app-care-takers-list {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    .card {
+        width: 230px;
+    }
+}
 
 //****************************//
 //           Utils           //
@@ -50,8 +66,18 @@ body {
 .card {
     margin: 0.5em;
     padding: 1em;
+    color: black;
 }
 
 td {
     padding-right: 1em;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+a {
+    color: inherit;
 }

@@ -1,0 +1,7 @@
+<div class="card" *ngFor="let careTaker of careTakers; let i = index">
+        <div class="card-block">
+            <h4><a routerLink="/care-takers/edit/{{careTaker.id}}" class="card-title">{{careTaker.firstName}} {{careTaker.lastName}}</a></h4>
+         
+            <button type="button" class="btn btn-sm btn-danger btn-block mt-3" (click)="onDeleteClick(careTakers[i].id)">Delete</button>      
+        </div>
+    </div>

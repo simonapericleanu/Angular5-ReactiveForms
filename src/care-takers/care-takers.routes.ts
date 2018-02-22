@@ -1,14 +1,15 @@
 import { Routes, RouterModule } from '@angular/router';
 
-import { CareTakersDomesticComponent } from './care-takers-domestic/care-takers-domestic.component';
-import { CareTakersWildComponent } from './care-takers-wild/care-takers-wild.component';
+import { CareTakersListComponent } from './care-takers-list/care-takers-list.component';
+import { CareTakersEditComponent } from './care-takers-edit/care-takers-edit.component';
 
 
 export const careTakersRoutes: Routes = [
-
-    { path: '', redirectTo: 'domestic', pathMatch: 'full' },
-    { path: 'domestic', component: CareTakersDomesticComponent },
-    { path: 'wild', component: CareTakersWildComponent },
+    { path: 'list', component: CareTakersListComponent },
+    { path: 'new', component: CareTakersEditComponent, data: { type: 'new' }  },
+    { path: 'edit', children: [
+        { path: ':id', component: CareTakersEditComponent, data: { type: 'edit' } }
+    ]}
 ];
 
 export const careTakersRoutingModule = RouterModule.forChild(careTakersRoutes);

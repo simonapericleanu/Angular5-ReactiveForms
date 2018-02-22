@@ -3,19 +3,23 @@ import { SharedModule } from '../shared/shared.module';
 
 import { animalsRoutingModule } from './animals.routes';
 import { AnimalsListComponent } from './animals-list/animals-list.component';
-import { AnimalsCardComponent } from './animals-card/animals-card.component';
+import { AnimalsListService } from './animals-list/animals-list.service';
 import { AnimalsEditComponent } from './animals-edit/animals-edit.component';
+import { AnimalsEditService } from './animals-edit/animals-edit.service';
+
 
 @NgModule({
   declarations: [
     AnimalsListComponent,
-    AnimalsCardComponent,
     AnimalsEditComponent
   ],
   imports: [
     SharedModule,
     animalsRoutingModule
   ],
-  providers: [],
+  providers: [
+    AnimalsEditService,
+    AnimalsListService
+  ],
 })
 export class AnimalsModule { }
