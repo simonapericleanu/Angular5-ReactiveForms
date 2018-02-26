@@ -9,6 +9,11 @@
       "id": 2,
       "firstName": "Jack",
       "lastName": "Silver"
+    },
+    {
+      "id": 3,
+      "firstName": "Wayne",
+      "lastName": "Rose"
     }
   ],
   "animals": [

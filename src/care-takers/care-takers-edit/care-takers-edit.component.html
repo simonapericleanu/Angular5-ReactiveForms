@@ -11,6 +11,8 @@
                                     class="form-control" 
                                     formControlName="firstName" 
                                     id="firstName">
+                                <span class="text-danger" *ngIf="careTakersForm.get('firstName').hasError('required') && 
+                                    (careTakersForm.get('firstName').dirty || careTakersForm.get('firstName').touched)">This input is required</span>
                             </div>
                         </div>
                         <div class="form-group row">
@@ -20,6 +22,8 @@
                                     class="form-control" 
                                     formControlName="lastName" 
                                     id="lastName">
+                                <span class="text-danger" *ngIf="careTakersForm.get('lastName').hasError('required') && 
+                                    (careTakersForm.get('lastName').dirty || careTakersForm.get('lastName').touched)">This input is required</span>
                             </div>
                         </div>
                         <div class="form-group row">

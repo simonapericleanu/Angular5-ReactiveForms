@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { FormGroup, FormBuilder } from '@angular/forms';
+import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 
 import { AnimalType } from '../../shared/enums/animal-type.enum';
 import { AnimalsEditService } from './animals-edit.service';
@@ -47,15 +47,21 @@ export class AnimalsEditComponent implements OnInit {
   private generateForm(): FormGroup {
     return this.formBuilder.group({
       id: null,
-      name: null,
-      typeID: null,
-      class: null,
-      careTakerID: null
+      name: [null, Validators.required],
+      typeID: [null, Validators.required],
+      class: [null, Validators.required],
+      careTakerID: [null, Validators.required],
     });
   }
 
   private onSubmit($event) {
     const value = this.animalsForm.value;
+    for (const field in this.animalsForm.controls) {
+      this.animalsForm.get(field).markAsTouched();
+    }
+    if (!this.animalsForm.valid) {
+      return;
+    }
     if (!this.id) {
       this.animalsEditService.addAnimal(value).subscribe(data => {
         this.router.navigate(['/animals/list']);

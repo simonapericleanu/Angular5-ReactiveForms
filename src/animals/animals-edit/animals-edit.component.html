@@ -12,6 +12,8 @@
                                 formControlName="name" 
                                 id="name" 
                                 placeholder="You name it!">
+                            <span class="text-danger" *ngIf="animalsForm.get('name').hasError('required') && 
+                                (animalsForm.get('name').dirty || animalsForm.get('name').touched)">This input is required</span>
                         </div>
                     </div>
                     <div class="form-group row">
@@ -20,6 +22,8 @@
                             <select class="custom-select w-100 text-capitalize" formControlName="typeID">
                                 <option [ngValue]="type.id" *ngFor="let type of types">{{type.name}}</option>
                             </select>
+                            <span class="text-danger" *ngIf="animalsForm.get('typeID').hasError('required') && 
+                                (animalsForm.get('typeID').dirty || animalsForm.get('typeID').touched)">This input is required</span>
                         </div>
                     </div>
                     <div class="form-group row">
@@ -29,6 +33,8 @@
                                 class="form-control" 
                                 formControlName="class" 
                                 id="species">
+                            <span class="text-danger" *ngIf="animalsForm.get('class').hasError('required') && 
+                                (animalsForm.get('class').dirty || animalsForm.get('class').touched)">This input is required</span>
                         </div>
                     </div>
                     <div class="form-group row">
@@ -37,6 +43,8 @@
                             <select class="custom-select w-100" formControlName="careTakerID">
                                 <option [ngValue]="careTaker.id" *ngFor="let careTaker of careTakers">{{careTaker.firstName}} {{careTaker.lastName}}</option>
                             </select>
+                            <span class="text-danger" *ngIf="animalsForm.get('careTakerID').hasError('required') && 
+                                (animalsForm.get('careTakerID').dirty || animalsForm.get('careTakerID').touched)">This input is required</span>
                         </div>
                     </div>
                     <div class="form-group row">

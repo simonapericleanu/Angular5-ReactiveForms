@@ -1,8 +1,7 @@
 import { Component } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { FormGroup, FormBuilder } from '@angular/forms';
+import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 
-// import { AnimalsEditService } from './animals-edit.service';
 import { CareTaker } from '../../shared/interfaces';
 import { CareTakersEditService } from './care-takers-edit.service';
 
@@ -42,13 +41,19 @@ export class CareTakersEditComponent {
   private generateForm(): FormGroup {
     return this.formBuilder.group({
       id: null,
-      firstName: null,
-      lastName: null
+      firstName: [null, Validators.required],
+      lastName: [null, Validators.required]
     });
   }
 
   private onSubmit($event) {
     const value = this.careTakersForm.value;
+    for (const field in this.careTakersForm.controls) {
+      this.careTakersForm.get(field).markAsTouched();
+    }
+    if (!this.careTakersForm.valid) {
+      return;
+    }
     if (!this.id) {
       this.careTakersEditService.addCareTaker(value).subscribe(data => {
         this.router.navigate(['/care-takers/list']);
