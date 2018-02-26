@@ -9,7 +9,8 @@
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "server": "json-server --watch db.json"
+    "server": "json-server --watch db.json",
+    "start-server": "concurrently \"npm run start\" \"npm run server\""
   },
   "private": true,
   "dependencies": {
@@ -23,6 +24,7 @@
     "@angular/platform-browser-dynamic": "^5.2.0",
     "@angular/router": "^5.2.0",
     "bootstrap": "^4.0.0-beta",
+    "concurrently": "^3.5.1",
     "core-js": "^2.4.1",
     "font-awesome": "^4.7.0",
     "jquery": "^3.3.1",
